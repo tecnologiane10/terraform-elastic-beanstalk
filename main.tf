@@ -149,7 +149,7 @@ resource "aws_elastic_beanstalk_environment" "main" {
   setting {
     namespace = "aws:ec2:vpc"
     name      = "Subnets"
-    value     = "${var.subnet_ids}"
+    value     = "${join(",", sort(split(",", var.subnet_ids)))}"
   }
 
   setting {
