@@ -1,9 +1,10 @@
 resource "aws_elastic_beanstalk_application" "main" {
-  name = "${var.application_name}"
+  count = "${var.create_application == "true" ? 1 : 0}"
+  name  = "${var.application_name}"
 }
 
 resource "aws_elastic_beanstalk_environment" "main" {
-  application            = "${aws_elastic_beanstalk_application.main.name}"
+  application            = "${var.application_name}"
   name                   = "${var.application_name}"
   solution_stack_name    = "${var.solution_stack_name}"
   wait_for_ready_timeout = "${var.environment_create_timeout}"

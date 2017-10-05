@@ -10,6 +10,15 @@ variable "balancer_security_group_id" {}
 
 variable "connection_draining_enabled" {}
 
+variable "create_application" {
+  default = "true"
+
+  description = <<EOF
+  If to create or not a Beanstalk application, valid values are true and false (as a string).
+  If this value is false a Beanstalk application with this name must exist.
+  EOF
+}
+
 variable "deployment_policy" {
   description = "Beanstalk deployment policy. Should be AllAtOnce, Rolling, RollingWithAdditionalBatch or Immutable"
 }
