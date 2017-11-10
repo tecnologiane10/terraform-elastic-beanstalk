@@ -4,8 +4,8 @@ resource "aws_elastic_beanstalk_application" "main" {
 }
 
 resource "aws_elastic_beanstalk_environment" "main" {
-  application            = "${var.application_name}"
-  name                   = "${var.application_name}"
+  application            = "${length(var.beanstalk_application_name) == 0 ? var.application_name : var.beanstalk_application_name}"
+  name                   = "${length(var.beanstalk_application_name) == 0 ? var.application_name : var.beanstalk_application_name}"
   solution_stack_name    = "${var.solution_stack_name}"
   wait_for_ready_timeout = "${var.environment_create_timeout}"
 

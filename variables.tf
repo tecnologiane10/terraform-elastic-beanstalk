@@ -8,6 +8,11 @@ variable "aws_region" {}
 
 variable "balancer_security_group_id" {}
 
+variable "beanstalk_application_name" {
+  default     = ""
+  description = "Set this to use an existing ElasticBeanstalk application"
+}
+
 variable "connection_draining_enabled" {}
 
 variable "create_application" {
