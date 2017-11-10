@@ -11,7 +11,7 @@ variable "balancer_security_group_id" {}
 variable "connection_draining_enabled" {}
 
 variable "create_application" {
-  default = "true"
+  default = true
 
   description = <<EOF
   If to create or not a Beanstalk application, valid values are true and false (as a string).

@@ -1,5 +1,5 @@
 resource "aws_elastic_beanstalk_application" "main" {
-  count = "${var.create_application == "true" ? 1 : 0}"
+  count = "${var.create_application ? 1 : 0}"
   name  = "${var.application_name}"
 }
 
