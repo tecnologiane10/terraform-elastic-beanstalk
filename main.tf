@@ -243,6 +243,12 @@ resource "aws_elastic_beanstalk_environment" "main" {
     namespace = "aws:elbv2:listener:443"
     value     = "${var.ssl_certificate_arn}"
   }
+
+  setting {
+    name      = "ProxyServer"
+    namespace = "aws:elasticbeanstalk:environment:proxy"
+    value     = "${var.enable_proxy_server ? "nginx" : "none"}"
+  }
 }
 
 resource "aws_security_group_rule" "balancer_http_inbound" {

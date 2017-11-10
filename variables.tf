@@ -31,6 +31,11 @@ variable "deployment_batch_size_type" {
   description = "Type of batch size, Percentage or Fixed"
 }
 
+variable "enable_proxy_server" {
+  default     = true
+  description = "Enable Nginx proxy server for Docker environments"
+}
+
 variable "environment_create_timeout" {}
 
 variable "environment_type" {
