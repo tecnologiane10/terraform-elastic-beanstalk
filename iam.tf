@@ -1,10 +1,10 @@
 resource "aws_iam_instance_profile" "instance_profile" {
-  name = "${var.application_name}-profile"
+  name = "${var.environment_name}-profile"
   role = "${aws_iam_role.instance_role.name}"
 }
 
 resource "aws_iam_role" "instance_role" {
-  name = "${var.application_name}"
+  name = "${var.environment_name}"
   path = "/"
 
   assume_role_policy = <<EOF
@@ -25,7 +25,7 @@ EOF
 }
 
 resource "aws_iam_role" "beanstalk_service_role" {
-  name = "${var.application_name}-service-role"
+  name = "${var.environment_name}-service-role"
   path = "/"
 
   assume_role_policy = <<EOF

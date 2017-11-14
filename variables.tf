@@ -8,11 +8,6 @@ variable "aws_region" {}
 
 variable "balancer_security_group_id" {}
 
-variable "beanstalk_application_name" {
-  default     = ""
-  description = "Set this to use an existing ElasticBeanstalk application"
-}
-
 variable "connection_draining_enabled" {}
 
 variable "create_application" {
@@ -42,6 +37,8 @@ variable "enable_proxy_server" {
 }
 
 variable "environment_create_timeout" {}
+
+variable "environment_name" {}
 
 variable "environment_type" {
   description = "Type of Beanstalk environment, either LoadBalanced or SingleInstance"

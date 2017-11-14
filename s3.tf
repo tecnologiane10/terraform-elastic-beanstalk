@@ -1,9 +1,9 @@
 resource "aws_s3_bucket" "beanstalk_deploy" {
-  bucket = "${var.application_name}-deploy"
+  bucket = "${var.environment_name}-deploy"
   acl    = "private"
 
   tags {
-    Name = "${var.application_name}-deploy"
+    Name = "${var.environment_name}-deploy"
   }
 }
 
